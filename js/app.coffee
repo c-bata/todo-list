@@ -9,6 +9,11 @@ task = new Task
 # View
 TaskView = Backbone.View.extend
   tagName: 'li'
+  events:
+    "clicked": "sayHello"
+  sayHello: ->
+    alert('hello!')
+    return
   template: _.template( $('#task-template').html() )
   render: ->
     template = this.template( this.model.toJSON() )

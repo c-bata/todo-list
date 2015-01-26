@@ -15,6 +15,12 @@
 
   TaskView = Backbone.View.extend({
     tagName: 'li',
+    events: {
+      "click .command": "sayHello"
+    },
+    sayHello: function() {
+      alert('hello!');
+    },
     template: _.template($('#task-template').html()),
     render: function() {
       var template;
