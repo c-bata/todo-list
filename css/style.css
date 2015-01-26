@@ -2,6 +2,11 @@
   text-decoration: line-through;
   color: #808080; }
 
+#error {
+  color: #ff6b18;
+  font-size: 16px;
+  margin-left: 10px; }
+
 .task-list {
   list-style: none;
   padding-left: 10px; }
