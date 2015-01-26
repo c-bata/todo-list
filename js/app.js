@@ -158,7 +158,8 @@
       uncompletedTasks = this.collection.filter(function(task) {
         return !task.get('completed');
       });
-      return $('#count').html(uncompletedTasks.length);
+      $('#rest-count').html(uncompletedTasks.length);
+      return $('#all-count').html(this.collection.length);
     };
 
     TasksView.prototype.render = function() {

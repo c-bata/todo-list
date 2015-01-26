@@ -85,7 +85,8 @@ class TasksView extends Backbone.View
   updateCount: ->
     uncompletedTasks = @collection.filter (task) ->
       return !task.get('completed')
-    $('#count').html(uncompletedTasks.length)
+    $('#rest-count').html(uncompletedTasks.length)
+    $('#all-count').html(@collection.length)
 
   render: ->
     @collection.each (task) ->
