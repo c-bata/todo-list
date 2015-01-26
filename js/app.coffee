@@ -1,5 +1,5 @@
 # Model
-Task = Backbone.Model.extend
+class Task extends Backbone.Model
   defaults:
     title: 'do something'
     completed: false
@@ -15,11 +15,11 @@ Task = Backbone.Model.extend
     return
 
 # Collection
-Tasks = Backbone.Collection.extend
+class Tasks extends Backbone.Collection
   model: Task
 
 # View
-TaskView = Backbone.View.extend
+class TaskView extends Backbone.View
   tagName: 'li'
 
   events:
@@ -50,7 +50,7 @@ TaskView = Backbone.View.extend
     @$el.html(template)
     return @
 
-AddTaskView = Backbone.View.extend
+class AddTaskView extends Backbone.View
   el: '#addTask'
 
   events:
@@ -64,7 +64,7 @@ AddTaskView = Backbone.View.extend
       $('#error').empty()
     return
 
-TasksView = Backbone.View.extend
+class TasksView extends Backbone.View
   tagName: 'ul'
   initialize: ->
     @collection.on('add', @addNew, @)
