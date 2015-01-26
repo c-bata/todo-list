@@ -54,6 +54,8 @@
 
     TaskView.prototype.tagName = 'li';
 
+    TaskView.prototype.className = 'task-item';
+
     TaskView.prototype.events = {
       'click .delete': 'destroy',
       'click .toggle': 'toggle'
@@ -132,6 +134,8 @@
     }
 
     TasksView.prototype.tagName = 'ul';
+
+    TasksView.prototype.className = 'task-list';
 
     TasksView.prototype.initialize = function() {
       this.collection.on('add', this.addNew, this);

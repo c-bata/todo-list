@@ -3,3 +3,12 @@
   text-decoration: line-through;
   color: $completed-task-color;
 }
+
+.task-list {
+  list-style: none;
+  padding-left: 10px;
+
+  & > .task-item{
+    margin: 10px;
+  }
+}

@@ -2,4 +2,10 @@
   text-decoration: line-through;
   color: #808080; }
 
+.task-list {
+  list-style: none;
+  padding-left: 10px; }
+  .task-list > .task-item {
+    margin: 10px; }
+
 /*# sourceMappingURL=style.css.map */

@@ -21,6 +21,7 @@ class Tasks extends Backbone.Collection
 # View
 class TaskView extends Backbone.View
   tagName: 'li'
+  className: 'task-item'
 
   events:
     'click .delete': 'destroy'
@@ -66,6 +67,8 @@ class AddTaskView extends Backbone.View
 
 class TasksView extends Backbone.View
   tagName: 'ul'
+  className: 'task-list'
+
   initialize: ->
     @collection.on('add', @addNew, @)
     @collection.on('change', @updateCount, @)
