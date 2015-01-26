@@ -61,6 +61,7 @@ AddTaskView = Backbone.View.extend
     task = new Task
     if task.set({title: $('#title').val()}, {validate: true})
       @collection.add(task)
+      $('#error').empty()
     return
 
 TasksView = Backbone.View.extend
@@ -74,6 +75,7 @@ TasksView = Backbone.View.extend
   addNew: (task) ->
     taskView = new TaskView model: task
     @$el.append(taskView.render().el)
+    $('#title').val('').focus()  # 追加した後に空文字を挿入してフォーカスを残す
     @updateCount()
     return
 

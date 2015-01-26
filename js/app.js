@@ -70,6 +70,7 @@
         validate: true
       })) {
         this.collection.add(task);
+        $('#error').empty();
       }
     }
   });
@@ -87,6 +88,7 @@
         model: task
       });
       this.$el.append(taskView.render().el);
+      $('#title').val('').focus();
       this.updateCount();
     },
     updateCount: function() {
