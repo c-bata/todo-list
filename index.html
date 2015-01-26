@@ -3,14 +3,12 @@
 <head>
     <meta charset="utf-8">
     <title>ToDoリスト</title>
-    <style>
-        .completed {
-            text-decoration: line-through;
-            color: gray;
-        }
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div class="container">
     <h1>Tasks</h1>
 
     <form id="addTask">
@@ -23,18 +21,19 @@
     </div>
 
     <p>Tasks left: <span id="count"></span> </p>
-
-    <script type="text/template" id="task-template">
-        <input type="checkbox" class="toggle" <%= completed ? 'checked': '' %> >
-        <span class="<%= completed ? 'completed' : '' %>">
+</div>
+<script type="text/template" id="task-template">
+    <input type="checkbox" class="toggle" <%= completed ? 'checked': '' %> >
+    <span class="<%= completed ? 'completed' : '' %>">
             <%- title %>
         </span>
-        <span class="delete">[x]</span>
-    </script>
-    <script src="vendor/underscore.js"></script>
-    <script src="vendor/jquery.js"></script>
-    <script src="vendor/backbone.js"></script>
-    <script src="vendor/backbone.js"></script>
-    <script src="js/app.js"></script>
+    <span class="delete">[x]</span>
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="vendor/underscore.js"></script>
+<script src="vendor/jquery.js"></script>
+<script src="vendor/backbone.js"></script>
+<script src="vendor/backbone.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

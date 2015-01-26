@@ -3,7 +3,8 @@
 .sass-cache
 *.css.map
 
+### Coffee
+*.js.map
+
 ### intellij
 .idea/
-
-
