@@ -67,12 +67,20 @@ TasksView = Backbone.View.extend
   tagName: 'ul'
   initialize: ->
     @collection.on('add', @addNew, @)
+    @collection.on('change', @updateCount, @)
+    @collection.on('destroy', @updateCount, @)
     return
 
   addNew: (task) ->
     taskView = new TaskView model: task
     @$el.append(taskView.render().el)
+    @updateCount()
     return
+
+  updateCount: ->
+    uncompletedTasks = @collection.filter (task) ->
+      return !task.get('completed')
+    $('#count').html(uncompletedTasks.length)
 
   render: ->
     @collection.each (task) ->
@@ -80,6 +88,7 @@ TasksView = Backbone.View.extend
       @$el.append taskView.render().el
       return
     , @
+    @updateCount()
     return @
 
 tasks = new Tasks([
