@@ -14,16 +14,23 @@
   });
 
   TaskView = Backbone.View.extend({
-    tagName: 'li'
+    tagName: 'li',
+    template: _.template($('#task-template').html()),
+    render: function() {
+      var template;
+      template = this.template(this.model.toJSON());
+      this.$el.html(template);
+      return this;
+    }
   });
 
   taskView = new TaskView({
     model: task
   });
 
-  console.log(taskView.el);
+  console.log(taskView.render().el);
 
-  console.log(taskView.$el);
+  $('body').append(taskView.render().el);
 
 }).call(this);
 
