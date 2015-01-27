@@ -1,13 +1,13 @@
-tasks = new Tasks([
+tasks = new TaskCollection([
   {
-    title: 'task1'
+    title: '上記フォームからタスクを登録'
     completed: true
   }
   {
-    title: 'task2'
+    title: 'check buttonを押すとタスクを完了'
   }
   {
-    title: 'task3'
+    title: '右の[x]を押すとタスクを削除できます'
   }
 ])
 
